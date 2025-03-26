@@ -42,7 +42,7 @@ void updateLCD() {
 }
 
 void readValue() {
-  VOLT = analogRead(A5)/1024.0 * 5;
+  VOLT = analogRead(A5)/1023.0 * 5;
   UPD = true;
 }
 
@@ -74,7 +74,7 @@ void onPress() {
 }
 
 void readButton() {
-  int READ = digitalRead(_PIN_B1);
+  int READ = digitalRead(PIN_B1);
  
   if (READ != BTN_LAST) {
     DEBOUNCE_T = millis();
